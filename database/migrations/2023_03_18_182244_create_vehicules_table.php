@@ -13,6 +13,12 @@ return new class extends Migration
     {
         Schema::create('vehicules', function (Blueprint $table) {
             $table->id();
+            $table->string('marque');
+            $table->string('modele');
+            $table->string('img_url')->nullable();
+            $table->boolean('control_technique')->default(false);
+            $table->boolean('assurance')->default(false);
+            $table->string('immatriculation');
             $table->timestamps();
         });
     }

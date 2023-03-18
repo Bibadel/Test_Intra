@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Interimaire;
+use App\Models\Interimaire\Interimaire;
 use App\Http\Requests\StoreInterimaireRequest;
 use App\Http\Requests\UpdateInterimaireRequest;
 
@@ -13,7 +13,7 @@ class InterimaireController extends Controller
      */
     public function index()
     {
-        //
+     dd('Eh oui');
     }
 
     /**

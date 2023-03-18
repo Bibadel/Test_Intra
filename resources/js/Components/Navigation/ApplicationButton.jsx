@@ -9,7 +9,7 @@ export default function ApplicationButton(props) {
         setIsOpen(!isOpen)
     }
     return (
-        <>        
+        <>
             <button onClick={openMenu}>
                 <div class="rounded rounded-flex items-center space-x-4 bg-gray-100 py-2 px-2">
                     <svg width="24" height="24" xmlns="http://www.w3.org/2000/svg">
@@ -19,29 +19,30 @@ export default function ApplicationButton(props) {
                     </svg>
                 </div>
             </button>
+            <div className={`relative min-h-full bg-gray-100 flex items-center justify-center backdrop-blur-lg z-50 ${!isOpen ? "hidden" : ""}`}>
+                <div class={` bg-indigo-100 flex items-center justify-center backdrop-blur-lg  rounded-lg shadow-lg`}>
+                    <div class="flex flex-col items-center py-4">
+                        <img src="https://via.placeholder.com/40" alt="logo" class="ml-4 mb-4 rounded-full border border-black" />
+                        
+                    </div>
+                    <hr class="border-gray-300" />
+                    <div class="grid grid-cols-3 gap-4 p-4">
+                        <Link href={route('home')} className="">
+                            <Application name="Accueil" url="https://cdn3d.iconscout.com/3d/premium/thumb/house-5591108-4652885.png" />
+                        </Link>
 
-        <div className={`absolute z-30 min-h-screen min-w-screen max-h-screen max-w-screen ${!isOpen ?  "hidden": ""}`}>
-            <div class={` bg-indigo-100 flex items-center justify-center backdrop-blur-lg  rounded-lg shadow-lg`}>
-                <span onClick={openMenu} class="flex flex-col items-left justify-around w-full h-full pt-0 pl-2 text-1"> X </span>        
-                
-                <hr class="border-gray-300" />
-                <div class="grid grid-cols-3 gap-4 p-4">
-                    <Link href={route('home')} className="">
-                        <Application  name="Accueil" url="https://cdn3d.iconscout.com/3d/premium/thumb/house-5591108-4652885.png" />                   
-                    </Link>
+                        <Link href={route('interimaire.index')} className="">
+                            <Application name="Intérimaires" url="https://cdn3d.iconscout.com/3d/premium/thumb/user-6332708-5209354.png" />
+                        </Link>
 
-                    <Link href={route('interim.index')} className="">
-                        <Application  name="Intérimaires" url="https://cdn3d.iconscout.com/3d/premium/thumb/user-6332708-5209354.png" />                   
-                    </Link>
+                        <Link href={route('vehicules.index')} className="">
+                            <Application name="Intérimaires" url="https://cdn.iconscout.com/icon/free/png-512/truck-264-449929.png" />
+                        </Link>
 
-                    <Link href={route('interim.index')} className="">
-                        <Application  name="Intérimaires" url="https://cdn3d.iconscout.com/3d/premium/thumb/user-6332708-5209354.png" />                   
-                    </Link>
 
-                   
+                    </div>
                 </div>
             </div>
-        </div>
         </>
     );
 }

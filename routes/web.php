@@ -42,4 +42,9 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
+Route::resource('vehicules', App\Http\Controllers\VehiculeController::class);
+Route::resource('interimaire', App\Http\Controllers\InterimaireController::class);
+Route::resource('contrats', App\Http\Controllers\ContratController::class);
+Route::resource('trajets', App\Http\Controllers\TrajetController::class);
+
 require __DIR__.'/auth.php';

@@ -13,6 +13,14 @@ class Interimaire extends Model
 {
     use HasFactory;
 
+    protected $fillable = [
+        'firstname',
+        'lastname',
+        'birthday',
+        'permis_pl',
+        'is_blacklist',
+    ];
+
     public function trajets(): HasMany
     {
         return $this->hasMany(Trajet::class);

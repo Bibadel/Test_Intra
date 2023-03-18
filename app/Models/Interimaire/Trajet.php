@@ -8,4 +8,10 @@ use Illuminate\Database\Eloquent\Model;
 class Trajet extends Model
 {
     use HasFactory;
+
+    protected $fillable = [
+        'tours',
+        'prix_tour',
+        'quantite_petrole',
+    ];
 }

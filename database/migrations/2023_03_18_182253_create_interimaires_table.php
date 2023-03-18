@@ -13,6 +13,11 @@ return new class extends Migration
     {
         Schema::create('interimaires', function (Blueprint $table) {
             $table->id();
+            $table->string('firstname');
+            $table->string('lastname');
+            $table->date('birthday');
+            $table->boolean('permis_pl')->default(false);
+            $table->boolean('is_blacklist')->default(false);
             $table->timestamps();
         });
     }

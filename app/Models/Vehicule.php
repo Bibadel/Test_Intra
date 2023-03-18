@@ -12,6 +12,15 @@ class Vehicule extends Model
 {
     use HasFactory;
 
+    protected $fillable = [
+        'marque',
+        'modele',
+        'img_url',
+        'control_technique',
+        'assurance',
+        'immatriculation',
+    ];
+
     public function livraisons(): HasMany
     {
         return $this->hasMany(Livraison::class);
