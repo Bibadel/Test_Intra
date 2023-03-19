@@ -2,7 +2,7 @@ import Header from "../../Components/Header";
 import Pagination from "@/Components/Page/Pagination";
 import {Inertia} from '@inertiajs/inertia';
 export default function Index(props) {
-    console.log(props.interimaires)
+    console.log(props)
     return (
         <>
             <Header title="Intérimaires" url={props.ziggy.url} />
@@ -19,7 +19,7 @@ export default function Index(props) {
                                 <img src="https://cdn3d.iconscout.com/3d/premium/thumb/worker-wearing-5379423-4495968.png" alt="Exemple d'image" class="w-16 h-16 rounded-lg" />
                                 <div>
                                     <h3 class="text-lg font-semibold text-gray-800">{interimaire.firstname} {interimaire.lastname}</h3>
-                                    <p class="mt-2 text-gray-600">Contrat : ?</p>
+                                    <p class="mt-2 text-gray-600">Contrat : { interimaire.contrat === null ? "❌" : "✔"}</p>
                                 </div>
                             </div>
                             <div class="absolute inset-0 rounded-lg bg-gradient-to-br from-blue-500 to-indigo-600 opacity-0 hover:opacity-40 transition-opacity duration-200">
