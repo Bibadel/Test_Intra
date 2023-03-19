@@ -16,6 +16,7 @@ return new class extends Migration
             $table->integer('tours')->default(0);
             $table->integer('prix_tour')->default(70000);
             $table->integer('quantite_petrole')->default(0);
+            $table->foreignId('interimaire_id')->constrained('interimaires');
             $table->timestamps();
         });
     }

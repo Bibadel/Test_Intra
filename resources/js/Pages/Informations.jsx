@@ -1,24 +1,16 @@
-import { Link, Head } from '@inertiajs/react';
-import ApplicationButton from '@/Components/Navigation/ApplicationButton';
+import { Link } from '@inertiajs/react';
+import Header from '@/Components/Header';
 
 export default function Informations(props) {
-    console.log(props)
     return (
         <>
-            <Head title="Informations" />
-            <header>
-                <ApplicationButton />
-                <div class="py-5 px-5 pl-5 flex items-left justify-center h-16">
-                    <img src={`${props.ziggy.url}/storage/assets/Logo.png`} alt="Logo Total Ouessant" class="pl-5 h-10 w-auto"/>
-                </div>
-            </header>
-
+            <Header title="Informations" url={props.ziggy.url}  />
             <div class="container mx-auto px-4 py-12">
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                     {/* Carte */}
                     <div class="relative bg-white p-6 rounded-lg shadow-md transition-all duration-200 hover:shadow-lg">
                         <div class="flex items-center space-x-4">
-                            <img src="https://images.unsplash.com/photo-1573496790974-8e0cf4f4b6d3?auto=format&fit=crop&w=64&h=64&q=80" alt="Exemple de véhicule" class="w-32 h-20 rounded-lg" />
+                            <img src="https://cdn3d.iconscout.com/3d/premium/thumb/car-3655127-3061893.png" alt="Exemple de véhicule" class="w-32 h-auto rounded-lg" />
                             <div>
                                 <h3 class="text-lg font-semibold text-gray-800">Audi A4</h3>
                                 <p class="text-gray-600">Année : 2021</p>
@@ -32,7 +24,7 @@ export default function Informations(props) {
 
                     <div class="relative bg-white p-6 rounded-lg shadow-md transition-all duration-200 hover:shadow-lg">
                         <div class="flex items-center space-x-4">
-                            <img src="https://images.unsplash.com/photo-1573496790974-8e0cf4f4b6d3?auto=format&fit=crop&w=64&h=64&q=80" alt="Exemple de véhicule" class="w-32 h-20 rounded-lg" />
+                            <img src="https://cdn3d.iconscout.com/3d/premium/thumb/car-3655127-3061893.png" alt="Exemple de véhicule" class="w-32 h-auto rounded-lg" />
                             <div>
                                 <h3 class="text-lg font-semibold text-gray-800">Audi A4</h3>
                                 <p class="text-gray-600">Année : 2021</p>
@@ -46,7 +38,7 @@ export default function Informations(props) {
 
                     <div class="relative bg-white p-6 rounded-lg shadow-md transition-all duration-200 hover:shadow-lg">
                         <div class="flex items-center space-x-4">
-                            <img src="https://images.unsplash.com/photo-1573496790974-8e0cf4f4b6d3?auto=format&fit=crop&w=64&h=64&q=80" alt="Exemple de véhicule" class="w-32 h-20 rounded-lg" />
+                            <img src="https://cdn3d.iconscout.com/3d/premium/thumb/car-3655127-3061893.png" alt="Exemple de véhicule" class="w-32 h-auto rounded-lg" />
                             <div>
                                 <h3 class="text-lg font-semibold text-gray-800">Audi A4</h3>
                                 <p class="text-gray-600">Année : 2021</p>
@@ -60,7 +52,7 @@ export default function Informations(props) {
 
                     <div class="relative bg-white p-6 rounded-lg shadow-md transition-all duration-200 hover:shadow-lg">
                         <div class="flex items-center space-x-4">
-                            <img src="https://images.unsplash.com/photo-1573496790974-8e0cf4f4b6d3?auto=format&fit=crop&w=64&h=64&q=80" alt="Exemple de véhicule" class="w-32 h-20 rounded-lg" />
+                            <img src="https://cdn3d.iconscout.com/3d/premium/thumb/car-3655127-3061893.png" alt="Exemple de véhicule" class="w-32 h-auto rounded-lg" />
                             <div>
                                 <h3 class="text-lg font-semibold text-gray-800">Audi A4</h3>
                                 <p class="text-gray-600">Année : 2021</p>
@@ -74,7 +66,7 @@ export default function Informations(props) {
 
                     <div class="relative bg-white p-6 rounded-lg shadow-md transition-all duration-200 hover:shadow-lg">
                         <div class="flex items-center space-x-4">
-                            <img src="https://images.unsplash.com/photo-1573496790974-8e0cf4f4b6d3?auto=format&fit=crop&w=64&h=64&q=80" alt="Exemple de véhicule" class="w-32 h-20 rounded-lg" />
+                            <img src="https://cdn3d.iconscout.com/3d/premium/thumb/car-3655127-3061893.png" alt="Exemple de véhicule" class="w-32 h-auto rounded-lg" />
                             <div>
                                 <h3 class="text-lg font-semibold text-gray-800">Audi A4</h3>
                                 <p class="text-gray-600">Année : 2021</p>
@@ -88,7 +80,7 @@ export default function Informations(props) {
 
                     <div class="relative bg-white p-6 rounded-lg shadow-md transition-all duration-200 hover:shadow-lg">
                         <div class="flex items-center space-x-4">
-                            <img src="https://images.unsplash.com/photo-1573496790974-8e0cf4f4b6d3?auto=format&fit=crop&w=64&h=64&q=80" alt="Exemple de véhicule" class="w-32 h-20 rounded-lg" />
+                            <img src="https://cdn3d.iconscout.com/3d/premium/thumb/car-3655127-3061893.png" alt="Exemple de véhicule" class="w-32 h-auto rounded-lg" />
                             <div>
                                 <h3 class="text-lg font-semibold text-gray-800">Audi A4</h3>
                                 <p class="text-gray-600">Année : 2021</p>
@@ -102,7 +94,7 @@ export default function Informations(props) {
 
                     <div class="relative bg-white p-6 rounded-lg shadow-md transition-all duration-200 hover:shadow-lg">
                         <div class="flex items-center space-x-4">
-                            <img src="https://images.unsplash.com/photo-1573496790974-8e0cf4f4b6d3?auto=format&fit=crop&w=64&h=64&q=80" alt="Exemple de véhicule" class="w-32 h-20 rounded-lg" />
+                            <img src="https://cdn3d.iconscout.com/3d/premium/thumb/car-3655127-3061893.png" alt="Exemple de véhicule" class="w-32 h-auto rounded-lg" />
                             <div>
                                 <h3 class="text-lg font-semibold text-gray-800">Audi A4</h3>
                                 <p class="text-gray-600">Année : 2021</p>
@@ -116,7 +108,7 @@ export default function Informations(props) {
 
                     <div class="relative bg-white p-6 rounded-lg shadow-md transition-all duration-200 hover:shadow-lg">
                         <div class="flex items-center space-x-4">
-                            <img src="https://images.unsplash.com/photo-1573496790974-8e0cf4f4b6d3?auto=format&fit=crop&w=64&h=64&q=80" alt="Exemple de véhicule" class="w-32 h-20 rounded-lg" />
+                            <img src="https://cdn3d.iconscout.com/3d/premium/thumb/car-3655127-3061893.png" alt="Exemple de véhicule" class="w-32 h-auto rounded-lg" />
                             <div>
                                 <h3 class="text-lg font-semibold text-gray-800">Audi A4</h3>
                                 <p class="text-gray-600">Année : 2021</p>
@@ -130,7 +122,7 @@ export default function Informations(props) {
 
                     <div class="relative bg-white p-6 rounded-lg shadow-md transition-all duration-200 hover:shadow-lg">
                         <div class="flex items-center space-x-4">
-                            <img src="https://images.unsplash.com/photo-1573496790974-8e0cf4f4b6d3?auto=format&fit=crop&w=64&h=64&q=80" alt="Exemple de véhicule" class="w-32 h-20 rounded-lg" />
+                            <img src="https://cdn3d.iconscout.com/3d/premium/thumb/car-3655127-3061893.png" alt="Exemple de véhicule" class="w-32 h-auto rounded-lg" />
                             <div>
                                 <h3 class="text-lg font-semibold text-gray-800">Audi A4</h3>
                                 <p class="text-gray-600">Année : 2021</p>

@@ -16,8 +16,8 @@ return new class extends Migration
             $table->string('firstname');
             $table->string('lastname');
             $table->date('birthday');
-            $table->boolean('permis_pl')->default(false);
-            $table->boolean('is_blacklist')->default(false);
+            $table->boolean('permis_pl')->default(0);
+            $table->boolean('is_blacklist')->default(0);
             $table->timestamps();
         });
     }

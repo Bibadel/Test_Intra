@@ -36,7 +36,7 @@ export default function ApplicationButton(props) {
                         </Link>
 
                         <Link href={route('vehicules.index')} className="">
-                            <Application name="Intérimaires" url="https://cdn.iconscout.com/icon/free/png-512/truck-264-449929.png" />
+                            <Application name="Véhicules" url="https://cdn.iconscout.com/icon/free/png-512/truck-264-449929.png" />
                         </Link>
 
 

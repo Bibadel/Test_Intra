@@ -17,7 +17,13 @@ class InterimaireFactory extends Factory
     public function definition(): array
     {
         return [
-            //
+            "firstname" => fake()->firstName(),
+            "lastname" => fake()->lastName(),
+            "birthday" => fake()->dateTimeBetween('-50 years', '-18 years'),
+            "permis_pl" => fake()->boolean(),
+            "is_blacklist" => fake()->boolean(),
+            "created_at" => fake()->dateTimeBetween('-1 years', 'now'),
+            "updated_at" => fake()->dateTimeBetween('-1 years', 'now'),       
         ];
     }
 }

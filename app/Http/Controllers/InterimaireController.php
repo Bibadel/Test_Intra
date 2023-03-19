@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Interimaire\Interimaire;
 use App\Http\Requests\StoreInterimaireRequest;
 use App\Http\Requests\UpdateInterimaireRequest;
+use Inertia\Inertia;
 
 class InterimaireController extends Controller
 {
@@ -13,7 +14,11 @@ class InterimaireController extends Controller
      */
     public function index()
     {
-     dd('Eh oui');
+        return Inertia::render('Interimaire/Index', [
+            'filters' => request()->all('search', 'trashed'),
+            'interimaires' => Interimaire::orderBy('nom')
+                ->paginate()
+        ]);
     }
 
     /**

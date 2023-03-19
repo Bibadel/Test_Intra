@@ -19,6 +19,8 @@ class Interimaire extends Model
         'birthday',
         'permis_pl',
         'is_blacklist',
+        'created_at',
+        'updated_at'
     ];
 
     public function trajets(): HasMany
