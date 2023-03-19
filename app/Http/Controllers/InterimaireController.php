@@ -60,6 +60,7 @@ class InterimaireController extends Controller
         return Inertia::render('Interimaire/Show', [
             'interimaire' => $interimaire,
             'contrat' => $interimaire->contrat,
+            'trajets' => $interimaire->trajets,
         ]);
     }
 
