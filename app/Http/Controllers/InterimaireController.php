@@ -14,10 +14,13 @@ class InterimaireController extends Controller
      */
     public function index()
     {
+        $interimaires = Interimaire::orderBy('nom')->paginate();
+        foreach ($interimaires as $interimaire) {
+            $interimaire->contrat;
+        }
         return Inertia::render('Interimaire/Index', [
             'filters' => request()->all('search', 'trashed'),
-            'interimaires' => Interimaire::orderBy('nom')
-                ->paginate()
+            'interimaires' => $interimaires,
         ]);
     }
 
@@ -55,7 +58,8 @@ class InterimaireController extends Controller
     public function show(Interimaire $interimaire)
     {
         return Inertia::render('Interimaire/Show', [
-            'interimaire' => $interimaire
+            'interimaire' => $interimaire,
+            'contrat' => $interimaire->contrat,
         ]);
     }
 
