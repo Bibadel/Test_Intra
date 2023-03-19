@@ -57,7 +57,7 @@ export default function Show(props) {
                     </div>
                     <div class="relative p-6 rounded-lg shadow-md transition-all duration-200 hover:shadow-lg">
                         <h3 class="text-lg font-semibold text-gray-800"><b> <u>Nombres de trajets faits : </u></b></h3>
-                        <p class="mt-2 text-gray-600"><i>75</i></p>
+                        <p class="mt-2 text-gray-600"><i>{ props.trajets.length}</i></p>
                         <div class="absolute inset-0 rounded-lg bg-gradient-to-br from-green-500 to-teal-600 opacity-0 hover:opacity-40 transition-opacity duration-200"></div>
                     </div>
                     <div class="relative p-6 rounded-lg shadow-md transition-all duration-200 hover:shadow-lg">
@@ -66,9 +66,6 @@ export default function Show(props) {
                         <div class="absolute inset-0 rounded-lg bg-gradient-to-br from-green-500 to-teal-600 opacity-0 hover:opacity-40 transition-opacity duration-200"></div>
                     </div>
                 </div>
-
-
-
             </div>
         </div>
         </>
