@@ -11,7 +11,7 @@ class StoreInterimaireRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -22,7 +22,11 @@ class StoreInterimaireRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            'firstname' => 'required|string|max:255',
+            'lastname' => 'required|string|max:255',
+            'birthday'  => 'required|date',
+            'permisPL' => 'required|boolean',
+            'blacklist' => 'required|boolean',
         ];
     }
 }

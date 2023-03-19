@@ -7,7 +7,7 @@ export default function Index(props) {
         <>
             <Header title="Intérimaires" url={props.ziggy.url} />
             <section class=" py-12">
-                <h1 class="text-center text-4xl pb-10 ">🧔‍♂️ Intérimaires </h1>
+                <h1 class="text-center text-4xl pb-10 ">🧔 Intérimaires </h1>
 
                 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 

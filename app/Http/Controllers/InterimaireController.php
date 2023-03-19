@@ -26,7 +26,7 @@ class InterimaireController extends Controller
      */
     public function create()
     {
-        //
+        return Inertia::render('Interimaire/Create');
     }
 
     /**
@@ -34,7 +34,19 @@ class InterimaireController extends Controller
      */
     public function store(StoreInterimaireRequest $request)
     {
-        //
+        $validated = $request->validated();
+        
+        $interimaire = new Interimaire([
+            'firstname' => $validated['firstname'],
+            'lastname' => $validated['lastname'],
+            'birthday' => $validated['birthday'],
+            'permis_pl' => $validated['permisPL'],
+            'is_blacklist' => $validated['blacklist'],
+        ]);
+
+        $interimaire->save();
+
+        return redirect()->route('interimaire.index')->with('success', 'Interimaire créé avec succès.');
     }
 
     /**
