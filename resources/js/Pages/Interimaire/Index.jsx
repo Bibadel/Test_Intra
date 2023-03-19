@@ -1,6 +1,6 @@
 import Header from "../../Components/Header";
 import Pagination from "@/Components/Page/Pagination";
-
+import {Inertia} from '@inertiajs/inertia';
 export default function Index(props) {
     console.log(props.interimaires)
     return (
@@ -14,7 +14,7 @@ export default function Index(props) {
                     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
 
                         {   props.interimaires.data.length > 0 ? props.interimaires.data.map((interimaire) => (
-                        <div class="relative bg-white p-6 rounded-lg shadow-md transition-all duration-200 hover:shadow-lg">
+                        <div class="relative bg-white p-6 rounded-lg shadow-md transition-all duration-200 hover:shadow-lg" onClick={ () => Inertia.get(route('interimaire.show', interimaire))}>
                             <div class="flex items-center space-x-4">
                                 <img src="https://cdn3d.iconscout.com/3d/premium/thumb/worker-wearing-5379423-4495968.png" alt="Exemple d'image" class="w-16 h-16 rounded-lg" />
                                 <div>

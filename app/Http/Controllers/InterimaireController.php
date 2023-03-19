@@ -42,7 +42,9 @@ class InterimaireController extends Controller
      */
     public function show(Interimaire $interimaire)
     {
-        //
+        return Inertia::render('Interimaire/Show', [
+            'interimaire' => $interimaire
+        ]);
     }
 
     /**
