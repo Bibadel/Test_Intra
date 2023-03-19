@@ -35,7 +35,7 @@ export default function ApplicationButton(props) {
                             <Application name="Intérimaires" url="https://cdn3d.iconscout.com/3d/premium/thumb/user-6332708-5209354.png" />
                         </Link>
 
-                        <Link href={route('vehicules.index')} className="">
+                        <Link href={route('vehicule.index')} className="">
                             <Application name="Véhicules" url="https://cdn.iconscout.com/icon/free/png-512/truck-264-449929.png" />
                         </Link>
 
