@@ -20,5 +20,6 @@ class DatabaseSeeder extends Seeder
         // ]);
 
         \App\Models\Interimaire\Interimaire::factory(30)->create();
+        \App\Models\Vehicule::factory(30)->create();
     }
 }
