@@ -18,6 +18,7 @@ class Vehicule extends Model
         'img_url',
         'control_technique',
         'assurance',
+        'essence',
         'immatriculation',
     ];
 

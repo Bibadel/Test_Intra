@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Vehicule;
 use App\Http\Requests\StoreVehiculeRequest;
 use App\Http\Requests\UpdateVehiculeRequest;
+use Inertia\Inertia;
 
 class VehiculeController extends Controller
 {
@@ -13,7 +14,11 @@ class VehiculeController extends Controller
      */
     public function index()
     {
-        //
+        $vehicules =  Vehicule::orderBy('marque')->paginate();
+        return Inertia::render('Vehicule/Index', [
+            'filters' => request()->all('search', 'trashed'),
+            'vehicules' => $vehicules,
+        ]);
     }
 
     /**

@@ -16,8 +16,19 @@ class VehiculeFactory extends Factory
      */
     public function definition(): array
     {
+        $number = fake()->numberBetween(100, 999);
+        $letter1 = fake()->randomLetter().fake()->randomLetter();
+        $letter2 = fake()->randomLetter().fake()->randomLetter();
+
+        $plate = strtoupper($letter1."-".$number."-".$letter2);
         return [
-            //
+            "marque" => fake()->company(),
+            "modele" => fake()->companySuffix(),
+            "img_url" => fake()->imageUrl(),
+            "control_technique" => fake()->boolean(),
+            "assurance" => fake()->boolean(),
+            "essence" => fake()->randomElement(["D", "SP", "JET"]),
+            "immatriculation" => $plate,    
         ];
     }
 }
