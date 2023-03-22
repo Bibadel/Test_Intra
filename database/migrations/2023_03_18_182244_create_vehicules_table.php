@@ -18,7 +18,8 @@ return new class extends Migration
             $table->string('img_url')->nullable();
             $table->boolean('control_technique')->default(false);
             $table->boolean('assurance')->default(false);
-            $table->string('immatriculation');
+            $table->enum('essence', ['D', 'SP', 'JET'])->default('D');
+            $table->string('immatriculation')->default("XX-000-XX");
             $table->timestamps();
         });
     }
