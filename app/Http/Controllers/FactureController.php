@@ -5,12 +5,16 @@ namespace App\Http\Controllers;
 use App\Models\Facture;
 use App\Http\Requests\StoreFactureRequest;
 use App\Http\Requests\UpdateFactureRequest;
+use App\Models\Interimaire\Interimaire;
+use Inertia\Inertia;
 
 class FactureController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
+    private  string $hRoute = 'facture.index';
+
     public function index()
     {
         $invoices = Facture::all();
@@ -24,9 +28,12 @@ class FactureController extends Controller
     /**
      * Show the form for creating a new resource.
      */
-    public function create()
+    public function create(Interimaire $inte, float $montant)
     {
-        //
+        return Inertia::render('Facture.Create', [
+            'interimaire' => $inte,
+            'montant' => $montant
+        ]);
     }
 
     /**
@@ -34,7 +41,12 @@ class FactureController extends Controller
      */
     public function store(StoreFactureRequest $request)
     {
-        //
+        $validated = $request->validate();
+
+        $facture = new Facture($request);
+        $facture->save();
+
+        return redirect()->route($this->hRoute)->with('success', 'Facture créé avec succès');
     }
 
     /**
@@ -42,7 +54,9 @@ class FactureController extends Controller
      */
     public function show(Facture $facture)
     {
-        //
+        return Inertia::render('Facture.Show', [
+            'facture' => $facture,
+        ]);
     }
 
     /**
@@ -50,7 +64,9 @@ class FactureController extends Controller
      */
     public function edit(Facture $facture)
     {
-        //
+        return Inertia::render('Facture.Edit', [
+            'facture' => $facture
+        ]);
     }
 
     /**
@@ -58,7 +74,12 @@ class FactureController extends Controller
      */
     public function update(UpdateFactureRequest $request, Facture $facture)
     {
-        //
+        $validation = $request->validate();
+        $facture = request()->all();
+
+        $facture->save();
+
+        return redirect()->route($this->hRoute)->with('success', 'La facture à été modifié');
     }
 
     /**
@@ -66,6 +87,7 @@ class FactureController extends Controller
      */
     public function destroy(Facture $facture)
     {
-        //
+        $facture->delete();
+        return redirect()->route($this->hRoute)->with('success', 'Facture détruite');
     }
 }
