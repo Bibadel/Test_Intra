@@ -13,7 +13,12 @@ class FactureController extends Controller
      */
     public function index()
     {
-        //
+        $invoices = Facture::all();
+
+        return Inertia::render('Facture.Index',[
+                'invoices' => $invoices,
+                'test' => "Ce n'est qu'un test"
+        ]);
     }
 
     /**
