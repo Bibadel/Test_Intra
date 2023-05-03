@@ -45,7 +45,7 @@ class TrajetPolicy
      */
     public function delete(User $user, Trajet $trajet): bool
     {
-        //
+       return $user->isAdmin === true;
     }
 
     /**
@@ -53,7 +53,7 @@ class TrajetPolicy
      */
     public function restore(User $user, Trajet $trajet): bool
     {
-        //
+        return $user->isAdmin === true;
     }
 
     /**
@@ -61,6 +61,6 @@ class TrajetPolicy
      */
     public function forceDelete(User $user, Trajet $trajet): bool
     {
-        //
+        return $user->isAdmin === true;
     }
 }

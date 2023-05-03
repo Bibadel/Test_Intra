@@ -14,4 +14,8 @@ class Trajet extends Model
         'prix_tour',
         'quantite_petrole',
     ];
+
+    public function interimaire(){
+        return $this->belongsTo(Interimaire::class);
+    }
 }
