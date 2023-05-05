@@ -91,5 +91,6 @@ class VehiculeController extends Controller
     public function destroy(Vehicule $vehicule)
     {
         $vehicule->delete();
+        return redirect()->route($this->hRoute)->with('success', 'Véhicule supprimé de la base de données');
     }
 }
