@@ -9,6 +9,7 @@ use Inertia\Inertia;
 
 class VehiculeController extends Controller
 {
+    private string $hRoute = "vehicule.index";
     /**
      * Display a listing of the resource.
      */
@@ -26,7 +27,7 @@ class VehiculeController extends Controller
      */
     public function create()
     {
-        //
+        return Inertia::render('Vehicule.Create');
     }
 
     /**
@@ -34,7 +35,22 @@ class VehiculeController extends Controller
      */
     public function store(StoreVehiculeRequest $request)
     {
-        //
+        $validation = $request->validate();
+
+        $vehicule = new Vehicule([
+            'marque'  => $request->marque,
+            'modele' => $request->modele,
+            'img_url' => $request->img,
+            'control_technique' => $request->cct,
+            'assurance' => $request->assurance,
+            'essence' => $request->essence,
+            'immatriculation' => $request->immat
+        ]);
+
+        $vehicule->save();
+
+        return redirect()->route($this->hRoute)->with('success', 'Véhicule ajouté au garage');
+
     }
 
     /**
@@ -42,7 +58,9 @@ class VehiculeController extends Controller
      */
     public function show(Vehicule $vehicule)
     {
-        //
+        return Inertia::render('Vehicule.Show', [
+            'vehicule' => $vehicule
+        ]);
     }
 
     /**
@@ -50,7 +68,9 @@ class VehiculeController extends Controller
      */
     public function edit(Vehicule $vehicule)
     {
-        //
+        return Inertia::render('Vehicule.Edit', [
+            'vehicule' => $vehicule
+        ]);
     }
 
     /**
@@ -58,7 +78,11 @@ class VehiculeController extends Controller
      */
     public function update(UpdateVehiculeRequest $request, Vehicule $vehicule)
     {
-        //
+       $vehicule = $request->all();
+       $vehicule->save();
+
+
+       return redirect()->route($this->hRoute)->with('success', "Véhicule modifié avec succès");
     }
 
     /**
@@ -66,6 +90,6 @@ class VehiculeController extends Controller
      */
     public function destroy(Vehicule $vehicule)
     {
-        //
+        $vehicule->delete();
     }
 }

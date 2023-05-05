@@ -11,7 +11,7 @@ class UpdateVehiculeRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -22,7 +22,13 @@ class UpdateVehiculeRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            'marque' => "string",
+            'modele' => "string",
+            'img_url' => "string",
+            'control_technique' => "boolean",
+            'assurance' => "boolean",
+            'essence' => "in:D,SP,JET",
+            'immatriculation' => "unique:vehicules,immatriculation"
         ];
     }
 }

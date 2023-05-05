@@ -16,7 +16,7 @@ export default function Index(props) {
                         {   props.interimaires.data.length > 0 ? props.interimaires.data.map((interimaire) => (
                         <div class="relative bg-white p-6 rounded-lg shadow-md transition-all duration-200 hover:shadow-lg" onClick={ () => Inertia.get(route('interimaire.show', interimaire))}>
                             <div class="flex items-center space-x-4">
-                                <img src="https://cdn3d.iconscout.com/3d/premium/thumb/worker-wearing-5379423-4495968.png" alt="Exemple d'image" class="w-16 h-16 rounded-lg" />
+                                <img src="https://cdn3d.iconscout.com/3d/premium/thumb/worker-wearing-5379423-4495968.png" alt="Logo Intérimaire " class="w-16 h-16 rounded-lg" />
                                 <div>
                                     <h3 class="text-lg font-semibold text-gray-800">{interimaire.firstname} {interimaire.lastname}</h3>
                                     <p class="mt-2 text-gray-600">Contrat : { interimaire.contrat === null ? "❌" : "✔"}</p>
@@ -27,6 +27,19 @@ export default function Index(props) {
                             </div>
                         </div>
                         )) : ""}
+
+                    <div class="relative bg-white p-6 rounded-lg shadow-md transition-all duration-200 hover:shadow-lg" onClick={ () => Inertia.get(route('interimaire.create'))}>
+                            <div class="flex items-center space-x-4">
+                                <img src="https://cdn3d.iconscout.com/3d/premium/thumb/user-performance-4027290-3328598.png" alt="Image Ajout intérimaire" class="w-16 h-16 rounded-lg" />
+                                <div>
+                                    <h3 class="text-lg font-semibold text-gray-800">Ajouter un intérimaire</h3>
+                                    <p class="mt-2 text-gray-600">+</p>
+                                </div>
+                            </div>
+                            <div class="absolute inset-0 rounded-lg bg-gradient-to-br from-blue-500 to-indigo-600 opacity-0 hover:opacity-40 transition-opacity duration-200">
+
+                            </div>
+                        </div>
 
                     </div>
                 </div>
