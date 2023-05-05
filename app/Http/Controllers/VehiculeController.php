@@ -15,7 +15,7 @@ class VehiculeController extends Controller
      */
     public function index()
     {
-        $vehicules =  Vehicule::orderBy('marque')->paginate();
+        $vehicules =  Vehicule::all()->paginate();
         return Inertia::render('Vehicule/Index', [
             'filters' => request()->all('search', 'trashed'),
             'vehicules' => $vehicules,
@@ -35,7 +35,7 @@ class VehiculeController extends Controller
      */
     public function store(StoreVehiculeRequest $request)
     {
-        $validation = $request->validate();
+
 
         $vehicule = new Vehicule([
             'marque'  => $request->marque,
@@ -59,7 +59,7 @@ class VehiculeController extends Controller
     public function show(Vehicule $vehicule)
     {
         return Inertia::render('Vehicule.Show', [
-            'vehicule' => $vehicule
+            'vehicule' => $vehicule,
         ]);
     }
 
@@ -76,11 +76,11 @@ class VehiculeController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdateVehiculeRequest $request, Vehicule $vehicule)
+    public function update(UpdateVehiculeRequest $request, Vehicule $veh)
     {
-       $vehicule = $request->all();
-       $vehicule->save();
 
+        $veh->update($request->all());
+        $veh->save();
 
        return redirect()->route($this->hRoute)->with('success', "Véhicule modifié avec succès");
     }
